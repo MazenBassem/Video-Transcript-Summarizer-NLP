@@ -29,6 +29,79 @@ pip install -U jupyter nltk spacy scikit-learn pandas numpy matplotlib
 
 > If your notebook uses additional libraries, install those as needed.
 
+## 🎥 Choose the Video to Summarize
+
+In the notebook, paste the link of the video you want to summarize (for example, a YouTube link), then run the cells in order.
+
+Example:
+
+```python
+video_url = "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+```
+
+## 🔑 Gemini API Key (Quick Setup)
+
+You need a Gemini API key to run the summarization parts.
+
+1. Open **Google AI Studio**: https://aistudio.google.com/
+2. Click **Get API key**
+3. Create and copy your key
+
+### Option 1: Kaggle / Colab (Recommended for Notebooks)
+
+- **Kaggle**: add your key using **Add-ons / Secrets** and read it in the notebook.
+- **Google Colab**: use Colab secrets (or equivalent secure key storage) and load it in your notebook.
+
+### Option 2: Terminal Environment Variable
+
+#### Bash (Linux/macOS)
+
+```bash
+export GEMINI_API_KEY="your_api_key_here"
+```
+
+#### Windows CMD
+
+```cmd
+set GEMINI_API_KEY=your_api_key_here
+```
+
+#### Windows PowerShell (current session)
+
+```powershell
+$env:GEMINI_API_KEY="your_api_key_here"
+```
+
+#### Windows PowerShell (persist for future sessions)
+
+```powershell
+setx GEMINI_API_KEY "your_api_key_here"
+```
+
+> After `setx`, restart your terminal/IDE so the variable is available.
+
+### Verify the key is set
+
+#### Bash
+
+```bash
+echo $GEMINI_API_KEY
+```
+
+#### Windows CMD
+
+```cmd
+echo %GEMINI_API_KEY%
+```
+
+#### PowerShell
+
+```powershell
+echo $env:GEMINI_API_KEY
+```
+
+> Keep your API key private. Never hardcode it in public notebooks or commit it to GitHub.
+
 ## 🚀 How to Run
 
 1. Clone the repository:
@@ -57,6 +130,7 @@ jupyter notebook
 
 ```text
 Video-Transcript-Summarizer-NLP/
+├── README.md
 └── text-summarizer.ipynb
 ```
 
